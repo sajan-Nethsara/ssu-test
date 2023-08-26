@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title2lines{
+  display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal; /* Preserve spaces and line breaks */
+    text-overflow: ellipsis;
+}
+
+.grad1 {
+  background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  opacity: 0%;
+}
+
+.grad1:hover {
+  opacity: 100%;
+}
+
+.card2 {
+  --background2: linear-gradient(to left, #f7ba2b 0%, #ed1c24 50%);
+  background: var(--background2);
+}
+
+.card {
+  --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  --background2: linear-gradient(to left, #f7ba2b 0%, #ed1c24 50%);
+  overflow: visible;
+  background: #f7ba2b;
+  background: var(--background2);
+  position: relative;
+  z-index: 1;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.5);
+  filter: blur(25px);
+  background: #f7ba2b;
+  background: var(--background2);
+  transition: opacity .4s;
+}
+
+.card-info {
+  --color: #181818;
+  background: var(--color);
+  color: #f7ba2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.card .title {
+  letter-spacing: .01em;
+}
+
+/*Hover*/
+.card:hover::after {
+  opacity: 0;
+}
+
+.card:hover .card-info {
+  color: #181818;
+  font-weight: bold;
+  background: var(--background2);
+  transition: color 0.4s;
+  transition: font-weight 0.1s;
+  letter-spacing: 1em;
+}
+
+.logo-text {
+  --background2: linear-gradient(to right, #f7ba2b 0%, #ed1c24 50%);
+  background-color: red;
+
+  /* Create the gradient. */
+  background-image: var(--background2);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent
+}
+
+.card3:hover {
+  scale: 105%;
+  transition: scale 0.5s;
+}
+
+.buttonCover {
+  background-color: #ed1c24;
+  background-image:
+    radial-gradient(at 76% 77%, #f7ba2b 0px, transparent 50%),
+    radial-gradient(at 10% 20%, #f7ba2b 0px, transparent 50%);
+  opacity: 60%;
+}
+.buttonCover:hover{
+  background-color: #ed1c24;
+  background-image:
+    radial-gradient(at 76% 77%, #f7ba2b 0px, transparent 50%),
+    radial-gradient(at 10% 20%, #f7ba2b 0px, transparent 50%);
+  opacity: 100%;
+  transition: opacity 0.2s ease-in-out;
+}
+.buttonInner{
+  background: #181818;
+  
+}
